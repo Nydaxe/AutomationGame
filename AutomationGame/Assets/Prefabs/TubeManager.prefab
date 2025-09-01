@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2494336628958728387}
   - component: {fileID: 2697517629593050745}
   - component: {fileID: 7666313619172605821}
+  - component: {fileID: 2917418224010479158}
   m_Layer: 0
   m_Name: TubeManager
   m_TagString: Untagged
@@ -45,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8fd6e2dd039d74e83fad4a65740ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TubeManager
+  tubePool: {fileID: 2917418224010479158}
+  tubePlacing: {fileID: 7666313619172605821}
 --- !u!114 &7666313619172605821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,3 +60,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760ad1e26f908a24ebcfe2f7421c297d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &2917418224010479158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5543900053733462617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 754586e4095a27848adc3d08757e6575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  prefab: {fileID: 5952748652913249715, guid: b1b65436ceaff8d4ea8aad68b926e2d2, type: 3}
+  PoolSize: 10
