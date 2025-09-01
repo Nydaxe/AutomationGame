@@ -740,9 +740,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7666313619172605821, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
-        m_TargetAssemblyTypeName: TubePlacing, Assembly-CSharp
-        m_MethodName: EnableTubePlacing
+      - m_Target: {fileID: 5104591605934576111}
+        m_TargetAssemblyTypeName: TubeManager, Assembly-CSharp
+        m_MethodName: StartPlacingTube
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -895,10 +895,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2697517629593050745, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
-      propertyPath: tubePool
-      value: 
-      objectReference: {fileID: 5104591605934576109}
     - target: {fileID: 5543900053733462617, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
       propertyPath: m_Name
       value: TubeManager
@@ -906,37 +902,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5543900053733462617, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5104591605934576109}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
---- !u!1 &5104591605934576108 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5543900053733462617, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
+--- !u!114 &5104591605934576111 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2697517629593050745, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
   m_PrefabInstance: {fileID: 5104591605934576107}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5104591605934576109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5104591605934576108}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 754586e4095a27848adc3d08757e6575, type: 3}
+  m_Script: {fileID: 11500000, guid: bd8fd6e2dd039d74e83fad4a65740ca0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
-  prefab: {fileID: 5952748652913249715, guid: b1b65436ceaff8d4ea8aad68b926e2d2, type: 3}
-  PoolSize: 10
+  m_EditorClassIdentifier: Assembly-CSharp::TubeManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 619394802}
-  - {fileID: 4844814007264725892}
   - {fileID: 389097585}
+  - {fileID: 619394802}
   - {fileID: 5104591605934576107}
+  - {fileID: 4844814007264725892}
   - {fileID: 705945284}
