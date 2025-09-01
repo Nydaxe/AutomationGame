@@ -1,14 +1,15 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class TubePlacing : MonoBehaviour
 {
-    bool clicked = false;
-    bool placingtube = false;
+    public bool placingtube = false;
+    int tubePlacements;
 
     public IEnumerator EnableTubePlacing()
-    {
+    {        
         placingtube = true;
 
         GameObject tube = TubeManager.Instance.GetComponent<ObjectPool>().GetObject();
@@ -16,20 +17,31 @@ public class TubePlacing : MonoBehaviour
 
         tubeLine.positionCount = 1;
 
+        tubePlacements = 0;
+
+        bool initialPlacement = false;
+
+
         while (placingtube)
         {
-            int positionIndex = tubeLine.positionCount - 1;
-
-            //Previews the tube placement
+            //Gets the mouse position in world space
             Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             mouseScreenPosition.z = 0f;
-            tubeLine.SetPosition(positionIndex, mouseScreenPosition);
 
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (Mouse.current.leftButton.wasPressedThisFrame && !initialPlacement)
             {
-                tubeLine.SetPosition(positionIndex, mouseScreenPosition);
-                tubeLine.positionCount++;
+                tubeLine.SetPosition(0, mouseScreenPosition);
+                initialPlacement = true;
+                Debug.Log("Initial Placement");
+                continue;
             }
+
+            if (!initialPlacement)
+            {
+                continue;
+            }
+
+            Debug.Log("yo");
 
             yield return null;
         }
