@@ -89,6 +89,8 @@ public class TubePlacing : MonoBehaviour
                 tubeLine.SetPosition(tubeLine.positionCount - 1, mouseScreenPosition);
             }
         }
+
+        previewTubeLine.positionCount = 0;
     }
 
     void Update()
