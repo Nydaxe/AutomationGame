@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9002690973651016268}
   - component: {fileID: 5243505087844221639}
+  - component: {fileID: 886834758776272444}
   m_Layer: 0
   m_Name: Tube
   m_TagString: Untagged
@@ -142,6 +143,20 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &886834758776272444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952748652913249715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e00e0b1bcc4bd404982722e37a39cb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tube
+  tubeLineRenderer: {fileID: 5243505087844221639}
+  previewTubeLineRenderer: {fileID: 4028381298863173247}
 --- !u!1 &7490042365490784400
 GameObject:
   m_ObjectHideFlags: 0

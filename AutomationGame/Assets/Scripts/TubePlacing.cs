@@ -7,13 +7,14 @@ using UnityEngine.InputSystem;
 
 public class TubePlacing : MonoBehaviour
 {
-    public LineRenderer previewTubeLine;
-    public LineRenderer tubeLine;
-
     public bool placingtube = false;
 
     public IEnumerator EnableTubePlacing()
-    {        
+    {
+        Tube tube = TubeManager.Instance.tubePool.GetObject().GetComponent<Tube>();
+        LineRenderer tubeLine = tube.tubeLineRenderer;
+        LineRenderer previewTubeLine = tube.previewTubeLineRenderer;
+
         placingtube = true;
 
         tubeLine.positionCount = 1;
@@ -21,7 +22,7 @@ public class TubePlacing : MonoBehaviour
         bool initialPlacement = false;
 
         Vector2 lastPipePosition = Vector2.zero;
-        
+
         Vector2 corner = Vector2.zero;
 
         bool prioritizeX = true;
@@ -71,9 +72,9 @@ public class TubePlacing : MonoBehaviour
             }
 
             // Calculate corner position
-                corner = prioritizeX
-                ? new Vector2(mouseScreenPosition.x, lastPipePosition.y)
-                : new Vector2(lastPipePosition.x, mouseScreenPosition.y);
+            corner = prioritizeX
+            ? new Vector2(mouseScreenPosition.x, lastPipePosition.y)
+            : new Vector2(lastPipePosition.x, mouseScreenPosition.y);
 
             // For preview, always use the last placed point
             previewTubeLine.SetPosition(0, lastPipePosition);
@@ -87,6 +88,14 @@ public class TubePlacing : MonoBehaviour
                 tubeLine.SetPosition(tubeLine.positionCount - 2, corner);
                 tubeLine.SetPosition(tubeLine.positionCount - 1, mouseScreenPosition);
             }
+        }
+    }
+
+    void Update()
+    {
+        if (Mouse.current.rightButton.wasPressedThisFrame && placingtube)
+        {
+            placingtube = false;
         }
     }
 }
