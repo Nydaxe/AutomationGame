@@ -419,6 +419,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &673638797 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 5243505087844221639, guid: b1b65436ceaff8d4ea8aad68b926e2d2, type: 3}
+  m_PrefabInstance: {fileID: 4844814007264725892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705945280
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +662,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989029019}
   m_CullTransparentMesh: 1
+--- !u!120 &1533692653 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 4028381298863173247, guid: b1b65436ceaff8d4ea8aad68b926e2d2, type: 3}
+  m_PrefabInstance: {fileID: 4844814007264725892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2106534195
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +909,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TubeManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7666313619172605821, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
+      propertyPath: tubeLine
+      value: 
+      objectReference: {fileID: 673638797}
+    - target: {fileID: 7666313619172605821, guid: dc2c8ffb9d88d414e9071f45520559dc, type: 3}
+      propertyPath: previewTubeLine
+      value: 
+      objectReference: {fileID: 1533692653}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
