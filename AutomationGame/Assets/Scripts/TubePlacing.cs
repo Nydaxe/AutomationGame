@@ -35,6 +35,8 @@ public class TubePlacing : MonoBehaviour
 
             if (Mouse.current.leftButton.wasPressedThisFrame && !initialPlacement)
             {
+                tubeLine.gameObject.transform.position = mouseScreenPosition;
+
                 tubeLine.SetPosition(0, mouseScreenPosition);
                 lastPipePosition = mouseScreenPosition;
 
@@ -89,6 +91,8 @@ public class TubePlacing : MonoBehaviour
                 tubeLine.SetPosition(tubeLine.positionCount - 1, mouseScreenPosition);
             }
         }
+
+        tubeLine.gameObject.GetComponent<Tube>().UpdateColliders();
 
         previewTubeLine.positionCount = 0;
     }
