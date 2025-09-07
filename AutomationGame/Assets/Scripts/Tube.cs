@@ -9,7 +9,7 @@ public class Tube : MonoBehaviour
     public Collider2D startCollider;
     public Collider2D endCollider;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void TubeObject(Collider2D other)
     {
         float distToStart = (other.gameObject.transform.position - tubeLineRenderer.GetPosition(0)).sqrMagnitude;
         float distToEnd = (other.gameObject.transform.position - tubeLineRenderer.GetPosition(tubeLineRenderer.positionCount - 1)).sqrMagnitude;
@@ -40,6 +40,8 @@ public class Tube : MonoBehaviour
 
     private IEnumerator MoveObjectAlongTube(Tubeable tubeable, int startIndex, int endIndex, int direction)
     {
+        Debug.Log("Moving object along tube");
+
         for (int i = 1; i < tubeLineRenderer.positionCount; i++)
         {
             Vector2 startPosition = tubeLineRenderer.GetPosition(startIndex + (i - 1) * direction);
@@ -68,6 +70,9 @@ public class Tube : MonoBehaviour
         Vector2 start = tubeLineRenderer.GetPosition(0);
         Vector2 end = tubeLineRenderer.GetPosition(tubeLineRenderer.positionCount - 1);
 
+        Debug.Log(start + "   " + end);
+
+        //Set collider positions and enable them
         startCollider.transform.position = start;
         endCollider.transform.position = end;
 

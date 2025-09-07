@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TubeManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class TubeManager : MonoBehaviour
 
     public void StartPlacingTube()
     {
+        StateManager.Instance.SetState(StateManager.State.PlacingTube);
         StartCoroutine(tubePlacing.EnableTubePlacing());
     }
 }

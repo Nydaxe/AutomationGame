@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -91,7 +90,9 @@ public class TubePlacing : MonoBehaviour
                 tubeLine.SetPosition(tubeLine.positionCount - 1, mouseScreenPosition);
             }
         }
-
+        
+        StateManager.Instance.SetState(StateManager.State.Idle);
+        
         tubeLine.gameObject.GetComponent<Tube>().UpdateColliders();
 
         previewTubeLine.positionCount = 0;
